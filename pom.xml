@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>jingwei-parent</artifactId>
+        <groupId>io.jingwei</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../jingwei-parent/pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.jingwei</groupId>
+    <artifactId>jingwei-base</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>jingwei-base-idgen</module>
+        <module>jingwei-base-utils</module>
+        <module>jingwei-base-codegen</module>
+        <module>jingwei-base-apollo</module>
+    </modules>
+
+    <properties>
+        <org.mapstruct.version>1.3.1.Final</org.mapstruct.version>
+        <swagger.core.version>1.5.22</swagger.core.version>
+    </properties>
+
+    <packaging>pom</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-client</artifactId>
+                <version>1.4.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <dependencies>
+
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+
+
+    </dependencies>
+
+</project>
