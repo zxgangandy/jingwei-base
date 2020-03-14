@@ -20,6 +20,7 @@
         <module>jingwei-base-utils</module>
         <module>jingwei-base-codegen</module>
         <module>jingwei-base-apollo</module>
+        <module>jingwei-base-feign</module>
     </modules>
 
     <properties>
