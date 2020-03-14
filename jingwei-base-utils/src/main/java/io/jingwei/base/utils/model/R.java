@@ -1,6 +1,5 @@
 package io.jingwei.base.utils.model;
 
-import io.jingwei.base.utils.constant.ApiConstant;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
@@ -26,8 +25,13 @@ public class R<T> implements Serializable {
 
 	@Getter
 	@Setter
-	@ApiModelProperty(value = "返回标记：成功标记=0，失败标记=1")
-	private int code;
+	@ApiModelProperty(value = "返回标记：成功标记=true, 失败标记=false")
+	private boolean success;
+
+	@Getter
+	@Setter
+	@ApiModelProperty(value = "返回错误码")
+	private String code;
 
 	@Getter
 	@Setter
@@ -46,35 +50,40 @@ public class R<T> implements Serializable {
 	private String traceId;
 
 	public static <T> R<T> ok() {
-		return restResult(null, ApiConstant.SUCCESS, null);
+		return restResult(null, true, null, null);
 	}
 
 	public static <T> R<T> ok(T data) {
-		return restResult(data, ApiConstant.SUCCESS, null);
-	}
-
-	public static <T> R<T> ok(T data, String msg) {
-		return restResult(data, ApiConstant.SUCCESS, msg);
+		return restResult(data, true,  null,null);
 	}
 
 	public static <T> R<T> failed() {
-		return restResult(null, ApiConstant.FAIL, null);
+		return restResult(null, false, null,null);
 	}
 
 	public static <T> R<T> failed(String msg) {
-		return restResult(null, ApiConstant.FAIL, msg);
+		return restResult(null, false, null, msg);
+	}
+
+	public static <T> R<T> failed(String code, String msg) {
+		return restResult(null, false, code, msg);
 	}
 
 	public static <T> R<T> failed(T data) {
-		return restResult(data, ApiConstant.FAIL, null);
+		return restResult(data,  false, null, null);
 	}
 
 	public static <T> R<T> failed(T data, String msg) {
-		return restResult(data, ApiConstant.FAIL, msg);
+		return restResult(data, false, null, msg);
 	}
 
-	private static <T> R<T> restResult(T data, int code, String msg) {
+	public static <T> R<T> failed(T data, String code, String msg) {
+		return restResult(data, false, code, msg);
+	}
+
+	private static <T> R<T> restResult(T data, boolean success, String code, String msg) {
 		R<T> apiResult = new R<>();
+		apiResult.setSuccess(success);
 		apiResult.setCode(code);
 		apiResult.setData(data);
 		apiResult.setMsg(msg);

@@ -12,5 +12,5 @@ public interface IBizErrCode {
      * 根据国际化的时候获取异常对应的全路径来匹配国际化内容
      * @return
      */
-    String getMSg();
+    String getMsg();
 }
