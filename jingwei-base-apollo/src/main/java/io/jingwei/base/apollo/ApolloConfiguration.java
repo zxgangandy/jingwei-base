@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConditionalOnProperty(name = "apollo.enabled", havingValue = "true")
-@EnableApolloConfig("application.yml")
+@EnableApolloConfig(value = {"application.yml"}, order = 1)
 @Slf4j
 public class ApolloConfiguration implements InitializingBean {
 

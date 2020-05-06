@@ -4,18 +4,18 @@ package io.jingwei.base.utils.tx;
 import io.jingwei.base.utils.exception.BizErr;
 import io.jingwei.base.utils.exception.SysErr;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionTemplate;
 
-@Service
 @Slf4j
 public class TxTemplateService {
 
-    @Autowired
     private TransactionTemplate defaultTx;
+
+    public TxTemplateService(TransactionTemplate defaultTx) {
+        this.defaultTx = defaultTx;
+    }
 
     /**
      * 编程事务
