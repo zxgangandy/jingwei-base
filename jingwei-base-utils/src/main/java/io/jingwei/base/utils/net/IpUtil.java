@@ -1,14 +1,19 @@
 package io.jingwei.base.utils.net;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.net.Inet6Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.UnknownHostException;
 import java.util.Enumeration;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 @SuppressWarnings("Duplicates")
@@ -19,6 +24,9 @@ public class IpUtil {
     private static final Pattern IP_PATTERN = Pattern.compile("\\d{1,3}(\\.\\d{1,3}){3,5}$");
     private static volatile InetAddress LOCAL_ADDRESS = null;
     private static final String COMPUTER_NAME = "COMPUTERNAME";
+
+    public static final String IP_REGEX = "^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$";
+
 
     public static String hostName;
 
@@ -182,6 +190,55 @@ public class IpUtil {
      */
     public static String getHostName() {
         return hostName;
+    }
+
+
+    public static String getClientIp() {
+
+        HttpServletRequest request = ((ServletRequestAttributes) (RequestContextHolder.currentRequestAttributes())).getRequest();
+
+        String ip = null;
+        if (Objects.isNull(request)) {
+            return ip;
+        }
+
+        String xForwardedFor = request.getHeader("x-forwarded-for");
+        if (StringUtils.isNotBlank(xForwardedFor)) {
+            ip = xForwardedFor.split(",")[0];
+            if (isIpValid(ip)) {
+                return ip;
+            }
+        }
+
+        ip = request.getHeader("X-Real-IP");
+        if (isIpValid(ip)) {
+            return ip;
+        }
+
+        ip = request.getHeader("Proxy-Client-IP");
+        if (isIpValid(ip)) {
+            return ip;
+        }
+
+        ip = request.getHeader("WL-Proxy-Client-IP");
+        if (isIpValid(ip)) {
+            return ip;
+        }
+
+        ip = request.getRemoteAddr();
+        if (isIpValid(ip)) {
+            return ip;
+        }
+
+        return "127.0.0.1";
+    }
+
+    public static boolean isIpValid(String ip) {
+        if (StringUtils.isBlank(ip)) {
+            return false;
+        }
+
+        return Pattern.matches(IP_REGEX, ip);
     }
 
 }
