@@ -4,23 +4,23 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
-        <artifactId>jingwei-parent</artifactId>
+        <artifactId>parent</artifactId>
         <groupId>io.jingwei</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../jingwei-parent/pom.xml</relativePath>
+        <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.jingwei</groupId>
-    <artifactId>jingwei-base</artifactId>
+    <artifactId>common</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>jingwei-base-idgen</module>
-        <module>jingwei-base-utils</module>
-        <module>jingwei-base-codegen</module>
-        <module>jingwei-base-apollo</module>
-        <module>jingwei-base-feign</module>
+        <module>common-idgen</module>
+        <module>common-utils</module>
+        <module>common-codegen</module>
+        <module>common-apollo</module>
+        <module>common-feign</module>
     </modules>
 
     <properties>
