@@ -6,30 +6,30 @@ package io.jingwei.base.codegen;
  * mysql 代码生成器
  * </p>
  */
-public class PaymentMysqlGenerator extends BaseMysqlGenerator {
+public class PaymentAdminMysqlGenerator extends BaseMysqlGenerator {
 
     @Override
     protected String getDbName() {
-        return "jingwei-payment";
+        return "payment-admin";
     }
 
     @Override
     protected String getModuleName() {
-        return "payment-service";
+        return "payment-admin";
     }
 
     @Override
     protected String getPkgName() {
-        return "io.jingwei.payment";
+        return "io.jingwei.payment_admin";
     }
 
     @Override
     protected String getTableName() {
-        return "api";
+        return "mch_info";
     }
 
     public static void main(String[] args) {
-        PaymentMysqlGenerator generator = new PaymentMysqlGenerator();
+        PaymentAdminMysqlGenerator generator = new PaymentAdminMysqlGenerator();
         generator.run();
     }
 }
