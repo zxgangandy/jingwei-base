@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.jingwei.common.lock.mapper.SqlLockMapper">
+
+    <insert id="insertLock">
+    insert into sql_lock(lock_key, owner, expire) select #{lock_key}, #{owner}, #{expire} from  (select 1) as T
+    where 1 > ( select count(id) from sql_lock where lock_key = #{lock_key} and expire >= TIMESTAMPDIFF(SECOND, ctime, NOW()))
+    </insert>
+
+</mapper>

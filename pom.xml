@@ -21,6 +21,7 @@
         <module>common-codegen</module>
         <module>common-apollo</module>
         <module>common-feign</module>
+        <module>common-lock</module>
     </modules>
 
     <properties>

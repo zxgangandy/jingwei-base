@@ -13,7 +13,7 @@
     <artifactId>common-codegen</artifactId>
 
     <properties>
-        <mybatis-plus.version>3.2.0</mybatis-plus.version>
+        <mybatis-plus.version>3.3.1</mybatis-plus.version>
     </properties>
 
     <dependencies>

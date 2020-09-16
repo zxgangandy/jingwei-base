@@ -21,6 +21,10 @@ public abstract class BaseMysqlGenerator {
 
     protected abstract String getTableName();
 
+    protected boolean projectDir() {
+        return false;
+    }
+
     public void run() {
         //1. 全局配置
         String projectPath = System.getProperty("user.dir");
@@ -30,8 +34,11 @@ public abstract class BaseMysqlGenerator {
         String parentModule = getModuleName();
         String moduleName = parentModule + "-biz";
 
+        String outputDir = projectDir() ? (projectPath + "/" + moduleName + "/src/main/java") :
+                (projectPath + "/" + parentModule + "/" + moduleName + "/src/main/java");
         GlobalConfig globalConfig = new GlobalConfig()
-                .setOutputDir(projectPath + "/" + parentModule + "/" + moduleName + "/src/main/java")
+                //.setOutputDir(projectPath + "/" + parentModule + "/" + moduleName + "/src/main/java")
+                .setOutputDir(outputDir)
                 .setAuthor("Andy")
                 .setOpen(false);
 

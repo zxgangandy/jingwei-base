@@ -1,4 +1,4 @@
-package io.jingwei.base.utils.validation;
+package io.jingwei.base.utils.i18n.validation;
 
 import org.hibernate.validator.internal.engine.messageinterpolation.InterpolationTerm;
 import org.hibernate.validator.internal.util.logging.Log;
