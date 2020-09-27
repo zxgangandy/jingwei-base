@@ -25,7 +25,7 @@ public class WalletMysqlGenerator extends BaseMysqlGenerator {
 
     @Override
     protected String getTableName() {
-        return "eth_latest";
+        return "eth_address";
     }
 
     @Override
