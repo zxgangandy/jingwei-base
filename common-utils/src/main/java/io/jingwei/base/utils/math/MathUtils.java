@@ -1,6 +1,7 @@
 package io.jingwei.base.utils.math;
 
-import io.jingwei.base.utils.string.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.math.BigDecimal;
 
