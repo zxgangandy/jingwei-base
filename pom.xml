@@ -49,12 +49,12 @@
     </scm>
 
     <modules>
-        <module>common-idgen</module>
-        <module>common-utils</module>
-        <module>common-codegen</module>
-        <module>common-apollo</module>
-        <module>common-feign</module>
-        <module>common-lock</module>
+        <module>base-idgen</module>
+        <module>base-utils</module>
+        <module>base-codegen</module>
+        <module>base-apollo</module>
+        <module>base-feign</module>
+        <module>base-lock</module>
     </modules>
 
     <properties>
