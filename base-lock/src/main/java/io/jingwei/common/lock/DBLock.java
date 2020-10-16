@@ -4,6 +4,7 @@ import io.jingwei.common.lock.entity.SqlLock;
 import io.jingwei.common.lock.service.ISqlLockService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.PostConstruct;
@@ -37,7 +38,6 @@ public class DBLock implements Lock {
     private Map<String, String> ownerMap;
 
 
-
     public DBLock(LockProperties lockProperties) {
         this.lockProperties   = lockProperties;
         this.ownerMap         = new ConcurrentHashMap<>();
@@ -49,7 +49,7 @@ public class DBLock implements Lock {
     @PostConstruct
     private void init() {
         sqlLockService.lambdaUpdate()
-                .lt(SqlLock::getExpire, "TIMESTAMPDIFF(SECOND, create_time, NOW())")
+                .lt(SqlLock::getExpire, "TIMESTAMPDIFF(SECOND, ctime, NOW())")
                 .remove();
     }
 
