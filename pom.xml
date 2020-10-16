@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.zxgangandy</groupId>
-    <artifactId>common</artifactId>
+    <artifactId>jingwei-base</artifactId>
     <version>1.0-SNAPSHOT</version>
     <description>https://github.com/zxgangandy/jingwei-base</description>
     <url>https://github.com/zxgangandy/jingwei-base</url>
