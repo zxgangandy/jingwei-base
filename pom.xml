@@ -20,13 +20,13 @@
 
     <developers>
         <developer>
-            <name>liuzhiwen</name>
-            <email>524409188@qq.com</email>
+            <name>zhaoxiaogang</name>
+            <email>286505491@qq.com</email>
             <url>https://github.com/zxgangandy/jingwei-base</url>
         </developer>
         <developer>
-            <name>zhaoxiaogang</name>
-            <email>286505491@qq.com</email>
+            <name>liuzhiwen</name>
+            <email>524409188@qq.com</email>
             <url>https://github.com/zxgangandy/jingwei-base</url>
         </developer>
     </developers>
@@ -271,7 +271,6 @@
                             </execution>
                         </executions>
                     </plugin>
-
 
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
