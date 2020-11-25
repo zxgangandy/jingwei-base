@@ -96,6 +96,22 @@ public class HttpClientUtil {
     }
 
     /**
+     * 同步gett请求
+     * @param url
+     * @param headerParams
+     * @return
+     */
+    public String gettSync(String url, Map<String, Object> headerParams) throws IOException {
+        Request request = new Request.Builder()
+                .url(url)
+                .headers(setHeaders(headerParams))
+                .get()
+                .build();
+
+        return mOkHttpClient.newCall(request).execute().body().string();
+    }
+
+    /**
      * 异步Get请求
      *
      * @param url
