@@ -25,7 +25,7 @@ public class CallbackMysqlGenerator extends BaseMysqlGenerator {
 
     @Override
     protected String getTableName() {
-        return "callback_task";
+        return "callback_log";
     }
 
     @Override
