@@ -101,7 +101,7 @@ public class HttpClientUtil {
      * @param headerParams
      * @return
      */
-    public String gettSync(String url, Map<String, Object> headerParams) throws IOException {
+    public String getSync(String url, Map<String, Object> headerParams) throws IOException {
         Request request = new Request.Builder()
                 .url(url)
                 .headers(setHeaders(headerParams))
