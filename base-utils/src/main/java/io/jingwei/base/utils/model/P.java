@@ -9,11 +9,11 @@ public class P<T> {
 
     private long total;
 
-    private int pageSize;
+    private long pageSize;
 
-    private int pageIndex;
+    private long pageIndex;
 
-    private int pages;
+    private long pages;
 
 
     public void setRows(List<T> rows) {
@@ -24,11 +24,11 @@ public class P<T> {
         this.total = total;
     }
 
-    public void setPageSize(int pageSize) {
+    public void setPageSize(long pageSize) {
         this.pageSize = pageSize;
     }
 
-    public void setPageIndex(int pageIndex) {
+    public void setPageIndex(long pageIndex) {
         this.pageIndex = pageIndex;
     }
 
@@ -40,23 +40,23 @@ public class P<T> {
         return this.total;
     }
 
-    public int getPageSize() {
+    public long getPageSize() {
         return this.pageSize;
     }
 
-    public int getPageIndex() {
+    public long getPageIndex() {
         return this.pageIndex;
     }
 
-    public int getPages() {
+    public long getPages() {
         return pages;
     }
 
-    public void setPages(int pages) {
+    public void setPages(long pages) {
         this.pages = pages;
     }
 
-    public P(List<T> rows, long total, int pageSize, int pageIndex, int pages) {
+    public P(List<T> rows, long total, long pageSize, long pageIndex, long pages) {
         this.rows = rows;
         this.total = total;
         this.pageSize = pageSize;
