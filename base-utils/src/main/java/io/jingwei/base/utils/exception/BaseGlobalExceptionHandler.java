@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -49,6 +50,18 @@ public class BaseGlobalExceptionHandler {
         log.warn("MethodArgumentNotValidException: {}, {}", e.getMessage(), e);
 
         String errorMessage = getErrMessage(e.getBindingResult());
+        return R.failed(errorMessage);
+    }
+
+    /**
+     * controller入参校验异常
+     */
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(value = HttpMessageNotReadableException.class)
+    public R methodArgumentNotValidExceptionHandler(HttpMessageNotReadableException e) {
+        log.warn("MethodArgumentNotValidException: {}, {}", e.getMessage(), e);
+
+        String errorMessage = e.getLocalizedMessage();
         return R.failed(errorMessage);
     }
 
