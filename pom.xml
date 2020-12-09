@@ -55,6 +55,7 @@
         <module>base-apollo</module>
         <module>base-feign</module>
         <module>base-lock</module>
+        <module>base-eureka</module>
     </modules>
 
     <properties>
