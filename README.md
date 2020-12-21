@@ -6,8 +6,10 @@ jingwei-base
 - 使用mybatis plus 重构了百度uid generator
 
 ## feign
-
+- feign的异常转换处理
+- 基于base-utils
 ## codegen
+- 基于mybatis plus的代码生成
 
 ## apollo
 
