@@ -25,7 +25,7 @@ public class AccountMysqlGenerator extends BaseMysqlGenerator {
 
     @Override
     protected String getTableName() {
-        return "spot_account_frozen";
+        return "spot_account";
     }
 
     @Override
