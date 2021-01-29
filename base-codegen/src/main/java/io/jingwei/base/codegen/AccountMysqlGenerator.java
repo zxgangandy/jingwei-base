@@ -25,7 +25,7 @@ public class AccountMysqlGenerator extends BaseMysqlGenerator {
 
     @Override
     protected String getTableName() {
-        return "spot_account";
+        return "spot_account_idempotent";
     }
 
     @Override
