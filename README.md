@@ -32,7 +32,7 @@ The eureka client lifecycle management tool.
  <dependency>
   <groupId>io.github.zxgangandy</groupId>
   <artifactId>base-eureka</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.6</version>
  </dependency>
 ```
 
