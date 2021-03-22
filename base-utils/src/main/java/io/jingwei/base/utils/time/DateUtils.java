@@ -59,4 +59,11 @@ public class DateUtils {
     public static String getSecondToStr(long second, String format) {
         return getLocalDateTimeToStr(getSecondToLocalDateTime(second), format);
     }
+
+    //获取从1970年1月1日到现在的毫秒数转LocalDateTime
+    public static LocalDateTime getDateTimeOfTimestamp(long timestamp) {
+        Instant instant = Instant.ofEpochMilli(timestamp);
+        ZoneId zoneId = ZoneId.systemDefault();
+        return LocalDateTime.ofInstant(instant, zoneId);
+    }
 }

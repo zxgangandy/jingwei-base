@@ -10,7 +10,7 @@ public class OrderMysqlGenerator extends BaseMysqlGenerator {
 
     @Override
     protected String getDbName() {
-        return "ex_order";
+        return "jingwei-exchange";
     }
 
     @Override
