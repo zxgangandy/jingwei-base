@@ -10,7 +10,7 @@ public class AccountMysqlGenerator extends BaseMysqlGenerator {
 
     @Override
     protected String getDbName() {
-        return "ex_account";
+        return "jingwei-exchange";
     }
 
     @Override
@@ -25,7 +25,7 @@ public class AccountMysqlGenerator extends BaseMysqlGenerator {
 
     @Override
     protected String getTableName() {
-        return "spot_account_idempotent";
+        return "spot_account_log";
     }
 
     @Override
