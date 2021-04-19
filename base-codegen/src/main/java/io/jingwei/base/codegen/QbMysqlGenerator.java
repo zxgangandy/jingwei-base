@@ -25,7 +25,7 @@ public class QbMysqlGenerator extends BaseMysqlGenerator2 {
 
     @Override
     protected String getTableName() {
-        return "cut_log";
+        return "reward_static_daily";
     }
 
     @Override
