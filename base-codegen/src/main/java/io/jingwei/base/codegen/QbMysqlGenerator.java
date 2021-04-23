@@ -25,7 +25,7 @@ public class QbMysqlGenerator extends BaseMysqlGenerator2 {
 
     @Override
     protected String getTableName() {
-        return "spot_account_order";
+        return "contract";
     }
 
     @Override
