@@ -25,7 +25,7 @@ public class QbMysqlGenerator extends BaseMysqlGenerator2 {
 
     @Override
     protected String getTableName() {
-        return "contract";
+        return "summary";
     }
 
     @Override
