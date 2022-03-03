@@ -23,12 +23,12 @@ public class UidProperties {
     /**
      * 工作机器ID占用的位数
      */
-    private int workerBits = 16;
+    private int workerBits = 7;
 
     /**
      * 序列号占用的位数
      */
-    private int seqBits = 7;
+    private int seqBits = 13;
 
     /**
      * 时间基点. 例如 2019-02-20 (毫秒: 1550592000000)
