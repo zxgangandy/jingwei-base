@@ -46,9 +46,11 @@ public abstract class BaseMysqlGenerator2 {
         DataSourceConfig dataSourceConfig = new DataSourceConfig()
                 .setDbType(DbType.MYSQL)  // 设置数据库类型
                 .setDriverName("com.mysql.jdbc.Driver")
-                .setUrl("jdbc:mysql://172.30.67.219:3306/" + getDbName() + "?useUnicode=true&useSSL=false&characterEncoding=utf8")
+                //.setUrl("jdbc:mysql://172.30.67.219:3306/" + getDbName() + "?useUnicode=true&useSSL=false&characterEncoding=utf8")
+                .setUrl("jdbc:mysql://127.0.0.1:3306/" + getDbName() + "?useUnicode=true&useSSL=false&characterEncoding=utf8")
                 .setUsername("root")
-                .setPassword("Yue$%^689");
+                //.setPassword("Yue$%^689");
+                .setPassword("root");
 
         //3. 包名策略配置
         PackageConfig pkConfig = new PackageConfig()
