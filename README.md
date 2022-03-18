@@ -29,7 +29,7 @@ The eureka client lifecycle management tool.
 [![](https://img.shields.io/badge/version-1.0.6-brightgreen.svg)](https://github.com/zxgangandy/base-eureka)
 
 ### usage
-- 添加依赖：
+- add dependency：
 
 ```xml
  <dependency>
