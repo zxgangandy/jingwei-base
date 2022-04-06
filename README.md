@@ -6,19 +6,19 @@ jingwei-base
 
 
 ## idgen
-- 使用mybatis plus 重构了百度uid generator
+- a distributed id generator
 
 ## feign
-- feign的异常转换处理
-- 基于base-utils
+- feign exceptions handler
+- base on base-utils
 ## codegen
-- 基于mybatis plus的代码生成
+- code generator base on mybatis plus
 
 ## apollo
 
 ## lock
-- 基于mysql的分布式锁实现
-- 基于mybatis plus
+- a distribute lock base on mysql
+- depend on mybatis plus
 ## utils
 
 ## base-eureka
